@@ -46,7 +46,7 @@ public class TaskService {
 
     public List<TaskResponseDTO> getAllTasksNotDeleted() {
 
-        return taskRepository.findByDeletedAtIsNotNull()
+        return taskRepository.findByDeletedAtIsNull()
                 .stream()
                 .map(task -> {
 
@@ -230,7 +230,7 @@ public class TaskService {
     }
 
 
-//    ------- permnent delete by id ------------
+//    ------- permanent delete by id ------------
 
 
     public void permanentDeleteById(Long id) {
@@ -249,7 +249,7 @@ public class TaskService {
     }
 
 
-//    -------- perment delete all --------------
+//    -------- permanent delete all --------------
 
     @Transactional
     public void permanentDeleteAll() {
@@ -259,7 +259,20 @@ public class TaskService {
         taskRepository.deleteAll(tasks);
     }
 
+    // --------- update task ------------------------
 
+    @Transactional
+    public Task updateTaskCompletion(Long id, boolean finished) {
+
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "Task not found"
+                ));
+
+        task.setFinished(finished);
+
+        return taskRepository.save(task);
+    }
 
 
 

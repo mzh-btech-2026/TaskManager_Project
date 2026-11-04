@@ -15,12 +15,21 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/task")
+@CrossOrigin(origins = "http://localhost:5173")
 public class TaskController {
 
     private final TaskService taskService;
 
     public TaskController(TaskService taskService) {
         this.taskService = taskService;
+    }
+
+    // ------------ health check up -------------
+
+    @GetMapping("/message")
+    public String hello(){
+
+        return "Hello zaheeeer";
     }
 
 
@@ -49,7 +58,7 @@ public class TaskController {
 
     // ------------- GET ALL ACTIVE TASKS -----------------
 
-    @GetMapping("/")
+    @GetMapping("/get")
     public ResponseEntity<List<TaskResponseDTO>> getAllTasksNotDeleted() {
 
         List<TaskResponseDTO> tasks = taskService.getAllTasksNotDeleted();
@@ -172,6 +181,17 @@ public class TaskController {
         taskService.permanentDeleteAll();
 
         return ResponseEntity.noContent().build();
+    }
+
+    // ----- update the task -----------
+
+
+    @PatchMapping("/{id}/completion")
+    public Task updateTaskCompletion(
+            @PathVariable Long id,
+            @RequestParam boolean finished) {
+
+        return taskService.updateTaskCompletion(id, finished);
     }
 
 }

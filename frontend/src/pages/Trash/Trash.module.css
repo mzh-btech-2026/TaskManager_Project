@@ -1,0 +1,380 @@
+
+/* MAIN PAGE */
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f5f7fc;
+}
+
+/* MAIN CONTENT */
+
+.maincont {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    padding: 35px;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.heading h1 {
+    font-size: 28px;
+    color: #081947;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+.heading p {
+    font-size: 14px;
+    color: #7b8499;
+    margin: 0;
+}
+
+/* HEADER ACTIONS */
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.restoreAllButton,
+.deleteAllButton {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.restoreAllButton {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.restoreAllButton:hover {
+    background-color: #bbf7d0;
+}
+
+.deleteAllButton {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.deleteAllButton:hover {
+    background-color: #fecaca;
+}
+
+.restoreAllButton:disabled,
+.deleteAllButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* TASK SECTION */
+
+.taskSection {
+    width: 100%;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.taskSection h2 {
+    color: #081947;
+    font-size: 20px;
+    margin: 0;
+}
+
+.taskCount {
+    background-color: #e8edfa;
+    color: #315be9;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* TASK GRID */
+
+.taskGrid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(240px, 1fr)
+    );
+    gap: 20px;
+}
+
+/* TASK CARD */
+
+.taskCard {
+    background-color: white;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #e5e9f2;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    transition: 0.3s;
+}
+
+.taskCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* CARD HEADER */
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.taskCard h3 {
+    color: #081947;
+    font-size: 17px;
+    margin: 0 0 10px;
+    overflow-wrap: anywhere;
+}
+
+/* TRASH BADGE */
+
+.deletedBadge {
+    display: inline-block;
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* DESCRIPTION */
+
+.description {
+    color: #7b8499;
+    font-size: 13px;
+    margin: 5px 0 18px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* COMPLETED */
+
+.completed {
+    display: inline-block;
+    background-color: #dcfce7;
+    color: #15803d;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* PENDING */
+
+.pending {
+    display: inline-block;
+    background-color: #fef3c7;
+    color: #b45309;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* CARD ACTIONS */
+
+.cardActions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #edf0f5;
+}
+
+/* RESTORE BUTTON */
+
+.restoreButton {
+    flex: 1;
+    background-color: #dcfce7;
+    color: #15803d;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.restoreButton:hover {
+    background-color: #bbf7d0;
+}
+
+/* DELETE BUTTON */
+
+.deleteButton {
+    flex: 1;
+    background-color: #fee2e2;
+    color: #dc2626;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.deleteButton:hover {
+    background-color: #fecaca;
+}
+
+/* DISABLED BUTTONS */
+
+.restoreButton:disabled,
+.deleteButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* EMPTY STATE */
+
+.emptyState {
+    background-color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid #e5e9f2;
+}
+
+.emptyIcon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.emptyState h3 {
+    color: #081947;
+    margin-bottom: 8px;
+}
+
+.emptyState p {
+    color: #7b8499;
+    font-size: 14px;
+}
+
+/* LOADING */
+
+.message {
+    color: #7b8499;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+
+    .maincont {
+        padding: 25px;
+    }
+
+    .taskGrid {
+        grid-template-columns: repeat(
+            auto-fill,
+            minmax(220px, 1fr)
+        );
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .maincont {
+        margin-left: 0;
+        margin-top: 65px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .headerActions {
+        width: 100%;
+    }
+
+    .headerActions button {
+        flex: 1;
+    }
+
+    .taskGrid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+
+    .maincont {
+        padding: 16px;
+    }
+
+    .heading h1 {
+        font-size: 23px;
+    }
+
+    .heading p {
+        font-size: 13px;
+    }
+
+    .taskCard {
+        padding: 18px;
+    }
+
+    .cardActions {
+        flex-direction: column;
+    }
+
+    .restoreButton,
+    .deleteButton {
+        width: 100%;
+    }
+
+    .headerActions {
+        flex-direction: column;
+    }
+
+    .headerActions button {
+        width: 100%;
+    }
+
+}

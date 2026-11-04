@@ -1,0 +1,217 @@
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #e5e9f2;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 18px;
+    box-sizing: border-box;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+/* LOGO SECTION */
+.logoSection {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 8px 30px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #081947;
+    margin: 0;
+}
+
+/* NAVIGATION */
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+/* NAVIGATION BUTTON */
+.button {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 15px;
+    text-decoration: none;
+    color: #68738a;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 9px;
+    transition: all 0.25s ease;
+}
+
+.button:hover {
+    background-color: #f0f3ff;
+    color: #315be9;
+}
+
+/* ACTIVE NAVIGATION */
+.active {
+    background-color: #315be9;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(49, 91, 233, 0.2);
+}
+
+.active:hover {
+    background-color: #2447c7;
+    color: #ffffff;
+}
+
+/* NAV ICON */
+.navIcon {
+    font-size: 18px;
+}
+
+/* BOTTOM SECTION */
+.bottomSection {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #edf0f5;
+}
+
+/* CLEAR BUTTON */
+.clearButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 13px 10px;
+    background-color: #fff1f1;
+    color: #dc2626;
+    border: 1px solid #fee2e2;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.clearButton:hover {
+    background-color: #fee2e2;
+}
+
+/* MOBILE HEADER */
+.mobileHeader {
+    display: none;
+}
+
+/* MENU BUTTON */
+.menuButton {
+    background: transparent;
+    border: none;
+    color: #081947;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* OVERLAY */
+.overlay {
+    display: none;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 220px;
+    }
+
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .mobileHeader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 65px;
+        background-color: #ffffff;
+        border-bottom: 1px solid #e5e9f2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+        z-index: 1100;
+    }
+
+    .mobileLogo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #081947;
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    .mobileLogo img {
+        width: 35px;
+        height: 35px;
+        object-fit: contain;
+    }
+
+    .sidebar {
+        top: 65px;
+        width: 260px;
+        height: calc(100vh - 65px);
+        padding: 20px 15px;
+        transform: translateX(-100%);
+    }
+
+    .sidebarOpen {
+        transform: translateX(0);
+    }
+
+    .logoSection {
+        display: none;
+    }
+
+    .navigation {
+        margin-top: 10px;
+    }
+
+    .overlay {
+        display: block;
+        position: fixed;
+        inset: 65px 0 0;
+        background-color: rgba(0, 0, 0, 0.35);
+        z-index: 900;
+    }
+
+}
+
+/* SMALL MOBILE */
+@media (max-width: 400px) {
+
+    .sidebar {
+        width: 240px;
+    }
+
+    .mobileHeader {
+        padding: 0 14px;
+    }
+
+}
