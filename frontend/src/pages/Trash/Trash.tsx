@@ -265,6 +265,8 @@ export default function Trash() {
                                 : "↩ Restore All"}
                         </button>
 
+                        
+
                         <button
                             className={styles.deleteAllButton}
                             onClick={deleteAll}

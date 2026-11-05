@@ -56,6 +56,7 @@ public class TaskService {
                     dto.setName(task.getName());
                     dto.setDescription(task.getDescription());
                     dto.setFinished(task.isFinished());
+                    dto.setCreated_at(task.getCreatedAt());
 
                     return dto;
                 })

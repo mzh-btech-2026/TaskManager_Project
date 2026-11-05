@@ -14,6 +14,8 @@ public class TaskResponseDTO {
 
     private String description;
 
+    private LocalDateTime created_at;
+
     private boolean isFinished;
 
 

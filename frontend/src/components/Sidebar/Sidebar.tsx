@@ -23,7 +23,7 @@ export default function Sidebar() {
         try {
 
             const response = await fetch(
-                "http://localhost:8080/api/v1/task/",
+                "http://localhost:8080/api/v1/task/all",
                 {
                     method: "DELETE"
                 }
